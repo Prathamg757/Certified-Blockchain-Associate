@@ -1,0 +1,386 @@
+# Day 02 - Blockchain Seeds: Cryptography & Hashing
+
+## Overview
+
+This module explains how Blockchain achieves security, trust, transparency, and immutability using Cryptography and Hashing.
+
+---
+
+# 1. Guarantee of a Good Life
+
+When purchasing an expensive product, we need proof that it is genuine.
+
+### Example
+
+Sheaffer Lifetime 3000 Fountain Pen
+
+- Gold-plated barrel
+- 14-carat gold nib
+
+Question:
+How do we verify that the product is original and not fake?
+
+Similarly, in digital systems:
+
+- How do we trust information?
+- How do we verify records?
+- How do we know data has not been modified?
+
+### Solution
+
+Blockchain acts as a trusted source of information because its records are:
+
+- Verifiable
+- Transparent
+- Immutable
+- Tamper-proof
+
+### Provenance
+
+**Definition:** The complete history and origin of a product or information.
+
+Examples:
+
+- Manufacturing details
+- Ownership history
+- Material used
+- Sales records
+
+---
+
+# 2. Road to Guarantee
+
+Blockchain provides:
+
+## Trust
+
+Information remains secure and unchanged.
+
+## Verification
+
+Users can independently verify information.
+
+### Notebook Analogy
+
+Notebook:
+
+- Pages contain information
+- Pages are connected sequentially
+
+Blockchain:
+
+- Blocks contain transactions
+- Blocks are connected sequentially
+
+| Notebook | Blockchain |
+|-----------|------------|
+| Page | Block |
+| Information | Transactions |
+
+### What Happens If Data Changes?
+
+Notebook:
+
+- Tearing a page breaks continuity
+
+Blockchain:
+
+- Changing a block breaks the chain
+- Network immediately detects tampering
+
+### Why Blockchain Is Secure
+
+- Every participant has a copy
+- Changes are easily detected
+- Data becomes immutable
+
+---
+
+# 3. Cryptography
+
+## Definition
+
+Cryptography is the science of securing information and communication.
+
+### Role in Blockchain
+
+- Secures data
+- Protects integrity
+- Links blocks
+- Detects tampering
+
+---
+
+## Basic Cryptography Process
+
+### Plaintext
+
+Original readable message.
+
+Example:
+
+Get the cake by 10 PM
+
+### Encryption
+
+Converting plaintext into ciphertext.
+
+### Ciphertext
+
+Unreadable encrypted message.
+
+Example:
+
+X9@#A7!P
+
+### Decryption
+
+Converting ciphertext back into plaintext.
+
+---
+
+## Benefits of Cryptography
+
+- Confidentiality
+- Security
+- Authentication
+- Privacy
+- Integrity
+
+---
+
+# 4. Hashing in Blockchain
+
+## What is Hashing?
+
+Hashing is a cryptographic process that converts data into a unique fixed-length string called a hash.
+
+### Popular Hashing Algorithms
+
+- SHA-256
+- SHA-1
+- MD5
+
+### SHA-256
+
+Full Form:
+
+Secure Hash Algorithm 256-bit
+
+Important:
+
+Bitcoin uses SHA-256.
+
+---
+
+## Hash Value
+
+Output generated after hashing.
+
+Example:
+
+Input:
+
+Blockchain
+
+Output:
+
+A7D9F3C5...
+
+### Fingerprint Analogy
+
+Just like every person has a unique fingerprint, every piece of data has a unique hash value.
+
+---
+
+# Uses of Hashing in Blockchain
+
+### 1. Security
+
+Protects blockchain data.
+
+### 2. Immutability
+
+Detects modifications.
+
+### 3. Block Linking
+
+Connects blocks together.
+
+### 4. Data Integrity
+
+Ensures data remains unchanged.
+
+---
+
+# Block Linking
+
+Each block contains:
+
+- Transaction Data
+- Current Block Hash
+- Previous Block Hash
+
+### Example
+
+Block 1
+
+Hash = ABC123
+
+Block 2
+
+Previous Hash = ABC123
+
+Block 3
+
+Previous Hash = XYZ789
+
+### Tampering Example
+
+If Block 1 changes:
+
+Data Changes
+↓
+Hash Changes
+↓
+Link Breaks
+↓
+Tampering Detected
+
+---
+
+# 5. Properties of Hash Functions
+
+## 1. One-Way Property
+
+Easy to create a hash.
+
+Impossible to recover original data from the hash.
+
+### Example
+
+Fruit → Juice ✔
+
+Juice → Original Fruit ✘
+
+---
+
+## 2. Deterministic
+
+Same input always produces the same output.
+
+Example:
+
+Blockchain → ABC123
+
+Every time the same input produces the same hash.
+
+---
+
+## 3. Avalanche Effect
+
+A small change in input creates a completely different hash.
+
+Example:
+
+Blockchain → ABC123
+
+blockchain → XYZ789
+
+Only one letter changes, but the output changes completely.
+
+---
+
+## 4. Collision Resistance
+
+Different inputs should not produce the same hash.
+
+### Collision
+
+Data A → Hash X
+
+Data B → Hash X
+
+Good hash functions make collisions extremely unlikely.
+
+---
+
+# Applications of Hashing in Blockchain
+
+### Transaction Hash
+
+Unique identifier for transactions.
+
+### Merkle Tree
+
+Efficient transaction verification.
+
+### Block Hash
+
+Unique fingerprint of a block.
+
+### Address Generation
+
+Used to create wallet addresses.
+
+### Block Linking
+
+Connects blocks to form a blockchain.
+
+---
+
+# Important Definitions
+
+### Blockchain
+
+A decentralized distributed ledger that records transactions securely.
+
+### Cryptography
+
+Science of securing information and communication.
+
+### Plaintext
+
+Original readable message.
+
+### Ciphertext
+
+Encrypted unreadable message.
+
+### Encryption
+
+Converting plaintext into ciphertext.
+
+### Decryption
+
+Converting ciphertext into plaintext.
+
+### Hashing
+
+Converting data into a fixed-length hash value.
+
+### Hash
+
+Output generated by a hashing algorithm.
+
+### SHA-256
+
+Secure Hash Algorithm used by Bitcoin.
+
+### Avalanche Effect
+
+Small input change causes a large hash change.
+
+### Collision Resistance
+
+Different inputs should not generate the same hash.
+
+### Provenance
+
+History and origin of a product or information.
+
+---
+
+# Summary
+
+Blockchain uses Cryptography and Hashing to provide trust, security, transparency, and immutability. Hash functions generate unique fingerprints for data, help connect blocks, detect tampering, and maintain the integrity of the blockchain network.
