@@ -1,0 +1,384 @@
+# Day 12 - Ethereum Network
+
+## Overview
+
+This module explains the Ethereum Network architecture, different types of nodes, Ethereum networks, Ethereum clients, and local blockchain simulation tools used for development and testing.
+
+---
+
+# 1. Types of Nodes
+
+## Definition
+
+An Ethereum Node is a computer or system that participates in the Ethereum blockchain network.
+
+Ethereum is a:
+
+- Peer-to-Peer (P2P)
+- Public
+- Permissionless
+
+blockchain network.
+
+---
+
+## A) Full Node
+
+### Definition
+
+A Full Node stores the complete blockchain and validates transactions and blocks.
+
+### Features
+
+- Stores complete blockchain data
+- Validates blocks and transactions
+- Provides blockchain data to other nodes
+- High storage requirement
+
+---
+
+## B) Light Node
+
+### Definition
+
+A Light Node stores only block headers and retrieves additional data when required.
+
+### Features
+
+- Stores block headers only
+- Uses Root Hashes for verification
+- Fetches data on demand
+- Suitable for mobile and low-storage devices
+
+---
+
+## C) Archive Node
+
+### Definition
+
+An Archive Node stores everything contained in a Full Node along with all previous blockchain states.
+
+### Features
+
+- Stores complete blockchain
+- Stores historical blockchain states
+- Used by block explorers and wallets
+- Very high storage requirement
+
+---
+
+# Comparison of Nodes
+
+| Full Node | Light Node | Archive Node |
+|------------|------------|--------------|
+| Full blockchain | Block headers only | Full blockchain + previous states |
+| Validates blocks | Fetches data | Stores historical data |
+| High storage | Low storage | Very high storage |
+
+---
+
+# 2. Different Ethereum Networks
+
+---
+
+## A) Mainnet
+
+### Definition
+
+The Mainnet is the original Ethereum blockchain where real transactions occur.
+
+### Features
+
+- Uses real ETH
+- Fully functional network
+- Network ID = 1
+- Open to everyone
+
+---
+
+## B) Beacon Chain
+
+### Definition
+
+The Beacon Chain manages Ethereum's Proof of Stake (PoS) consensus.
+
+### Features
+
+- Launched in December 2020
+- Coordinates validators
+- Later merged with Ethereum Mainnet
+
+---
+
+## C) Test Networks (Testnets)
+
+### Definition
+
+Testnets are Ethereum networks used for testing Smart Contracts and DApps without spending real ETH.
+
+### Test ETH
+
+Test ETH is obtained through **Faucets**.
+
+---
+
+## Sepolia
+
+### Features
+
+- Replaced Ropsten
+- Uses Proof of Stake
+- Preferred for Smart Contract and DApp development
+- Network ID = 1115511
+
+---
+
+## Goerli (Deprecated)
+
+### Features
+
+- First cross-client testnet
+- Uses Proof of Stake
+- Network ID = 5
+
+---
+
+## Holesky
+
+### Features
+
+- Successor of Goerli
+- Used for staking and infrastructure testing
+
+---
+
+# 3. Ethereum Clients
+
+## Definition
+
+An Ethereum Client is software that performs the functions of an Ethereum node.
+
+---
+
+# Post-Merge Architecture
+
+```
+Ethereum Client
+
+↓
+
+Execution Client (Eth1)
+
++
+
+Consensus Client (Eth2)
+```
+
+---
+
+## Execution Client (Eth1)
+
+### Functions
+
+- Processes transactions
+- Executes transactions inside EVM
+- Stores blockchain data
+
+### Examples
+
+- Geth (Go)
+- Hyperledger Besu (Java)
+- Erigon (Go)
+- Nethermind (C#/.NET)
+
+---
+
+## Consensus Client (Eth2)
+
+### Functions
+
+- Runs on Beacon Chain
+- Handles Proof of Stake consensus
+- Uses data from Execution Client
+
+### Examples
+
+- Prysm (Go)
+- Teku (Java)
+- Lighthouse (Rust)
+- Nimbus (Nim)
+
+---
+
+# Before Merge vs After Merge
+
+| Before Merge | After Merge |
+|--------------|-------------|
+| Only Execution Client | Execution + Consensus Client |
+| Proof of Work (PoW) | Proof of Stake (PoS) |
+
+---
+
+# Ethereum Blockchain Simulation Tools
+
+## Ganache (Deprecated)
+
+### Features
+
+- Local Ethereum blockchain simulator
+- Part of Truffle Suite
+
+---
+
+## Remix Virtual Machine (Remix VM)
+
+### Features
+
+- Built into Remix IDE
+- Simulates Ethereum blockchain
+- No local installation required
+
+---
+
+## Hardhat Node
+
+### Features
+
+- Local blockchain for testing
+- Part of Hardhat Framework
+- Used for Smart Contract development
+
+---
+
+# Complete Module Flow
+
+```
+Ethereum Network
+
+↓
+
+Types of Nodes
+
+├── Full Node
+├── Light Node
+└── Archive Node
+
+↓
+
+Different Networks
+
+├── Mainnet
+├── Beacon Chain
+└── Testnets
+
+↓
+
+Testnets
+
+├── Sepolia
+├── Goerli
+└── Holesky
+
+↓
+
+Ethereum Clients
+
+├── Execution Client
+└── Consensus Client
+
+↓
+
+Ethereum Virtual Machine (EVM)
+
+↓
+
+Simulation Tools
+
+├── Ganache
+├── Remix VM
+└── Hardhat Node
+```
+
+---
+
+# Important Definitions
+
+## Ethereum Node
+
+A computer participating in the Ethereum blockchain network.
+
+---
+
+## Full Node
+
+Stores the complete blockchain and validates transactions.
+
+---
+
+## Light Node
+
+Stores only block headers and fetches data when needed.
+
+---
+
+## Archive Node
+
+Stores the complete blockchain along with all historical states.
+
+---
+
+## Mainnet
+
+The official Ethereum blockchain where real ETH transactions occur.
+
+---
+
+## Beacon Chain
+
+Blockchain responsible for Ethereum's Proof of Stake consensus.
+
+---
+
+## Testnet
+
+A testing network used for developing Smart Contracts and DApps without real ETH.
+
+---
+
+## Execution Client
+
+Processes transactions and executes Smart Contracts.
+
+---
+
+## Consensus Client
+
+Handles Proof of Stake consensus and validator coordination.
+
+---
+
+## Remix VM
+
+Built-in virtual blockchain provided by Remix IDE.
+
+---
+
+## Hardhat Node
+
+Local Ethereum blockchain used for Smart Contract testing.
+
+---
+
+# Key Takeaways
+
+- Ethereum supports Full, Light, and Archive Nodes.
+- Mainnet is used for real transactions, while Testnets are used for development.
+- After The Merge, Ethereum requires both Execution and Consensus Clients.
+- Remix VM and Hardhat Node are widely used for Smart Contract development and testing.
+- Sepolia is the preferred Ethereum test network for modern DApp development.
+
+---
+
+# Summary
+
+The Ethereum Network is maintained by different types of nodes and clients that work together to process transactions and maintain consensus. Developers use Testnets such as Sepolia and simulation tools like Remix VM and Hardhat Node to build and test Smart Contracts before deploying them on the Ethereum Mainnet.
